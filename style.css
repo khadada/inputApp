@@ -63,12 +63,17 @@ p {
 .danger {
 	background-color: var(--dangerColor);
 	color: var(--whiteColor);
+	box-shadow: 0 0 10px 4px var(--dangerColor);
 }
 .succesed {
 	background-color: var(--succesedColor);
+	box-shadow: 0 0 10px 4px var(--succesedColor);
+
 	color: var(--whiteColor);
 }
 .alert {
 	background-color: var(--alertColor);
+	box-shadow: 0 0 10px 4px var(--alertColor);
+
 	color: var(--whiteColor);
 }
