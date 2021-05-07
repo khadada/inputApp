@@ -1,19 +1,19 @@
 /** @format */
 
 let btn = document.querySelector('#botton');
+let inptVal = document.querySelector('#input-value');
 function appStart() {
 	let result = document.querySelector('#result-in-para');
 	try {
-		let inptVal = document.querySelector('#input-value').value;
-		if (inptVal == '') {
+		if (inptVal.value == '') {
 			result.classList.add('danger');
 			throw 'the input is empty';
 		}
-		if (isNaN(inptVal)) {
+		if (isNaN(inptVal.value)) {
 			result.classList.add('danger');
 			throw 'is not a number ';
 		}
-		let x = Number(inptVal);
+		let x = Number(inptVal.value);
 		if (x < 1) {
 			result.classList.add('alert');
 			throw ' too small';
@@ -36,4 +36,11 @@ function appStart() {
 	}
 }
 btn.addEventListener('click', appStart);
+//  I add this part for my code
+inptVal.addEventListener('keydown', (e) => {
+	if (e.keyCode === 13) {
+		appStart();
+	}
+});
+// end
 alert('please enter value between 1 to 10');
